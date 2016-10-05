@@ -1,7 +1,7 @@
 ﻿{
-    "version": "2.0.0",
+    "version": "2.0.1",
     "packOptions": {
-        "description": "The observable sink for Serilog.",
+        "description": "Write Serilog events to observers (Rx) through an IObservable.",
         "authors": [ "Serilog Contributors" ],
         "tags": [ "serilog", "observable", "reactive" ],
         "projectUrl": "http://serilog.net",
