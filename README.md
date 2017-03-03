@@ -21,7 +21,7 @@ Log.Logger = new LoggerConfiguration()
         .Subscribe())
     .CreateLogger();
 
-Log.Infomation("Hello, observers!");
+Log.Information("Hello, observers!");
 
 Log.CloseAndFlush();
 ```
