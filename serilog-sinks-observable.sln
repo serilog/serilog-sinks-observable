@@ -1,26 +1,27 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{037440DE-440B-4129-9F7A-09B42D00397E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{E9D1B5E1-DEB9-4A04-8BAB-24EC7240ADAF}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
 		Build.ps1 = Build.ps1
 		CHANGES.md = CHANGES.md
-		global.json = global.json
-		NuGet.Config = NuGet.Config
+		LICENSE = LICENSE
 		README.md = README.md
 		assets\Serilog.snk = assets\Serilog.snk
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Serilog.Sinks.Observable", "src\Serilog.Sinks.Observable\Serilog.Sinks.Observable.xproj", "{8D6C0BB9-D04D-49B6-9043-4A776AD275D5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9D8490A7-A075-4E53-A5F2-A960CF4DB3E7}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Serilog.Tests", "test\Serilog.Tests\Serilog.Tests.xproj", "{3C2D8E01-5580-426A-BDD9-EC59CD98E618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Sinks.Observable", "src\Serilog.Sinks.Observable\Serilog.Sinks.Observable.csproj", "{727C1498-20A8-4C1A-BE5F-8AB762F920DC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serilog.Tests", "test\Serilog.Tests\Serilog.Tests.csproj", "{C88A987D-3E79-481C-9DD7-441371EAF9E6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,20 +29,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8D6C0BB9-D04D-49B6-9043-4A776AD275D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8D6C0BB9-D04D-49B6-9043-4A776AD275D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8D6C0BB9-D04D-49B6-9043-4A776AD275D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8D6C0BB9-D04D-49B6-9043-4A776AD275D5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3C2D8E01-5580-426A-BDD9-EC59CD98E618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3C2D8E01-5580-426A-BDD9-EC59CD98E618}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3C2D8E01-5580-426A-BDD9-EC59CD98E618}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3C2D8E01-5580-426A-BDD9-EC59CD98E618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{727C1498-20A8-4C1A-BE5F-8AB762F920DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{727C1498-20A8-4C1A-BE5F-8AB762F920DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{727C1498-20A8-4C1A-BE5F-8AB762F920DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{727C1498-20A8-4C1A-BE5F-8AB762F920DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C88A987D-3E79-481C-9DD7-441371EAF9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88A987D-3E79-481C-9DD7-441371EAF9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88A987D-3E79-481C-9DD7-441371EAF9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88A987D-3E79-481C-9DD7-441371EAF9E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8D6C0BB9-D04D-49B6-9043-4A776AD275D5} = {037440DE-440B-4129-9F7A-09B42D00397E}
-		{3C2D8E01-5580-426A-BDD9-EC59CD98E618} = {9D8490A7-A075-4E53-A5F2-A960CF4DB3E7}
+		{727C1498-20A8-4C1A-BE5F-8AB762F920DC} = {037440DE-440B-4129-9F7A-09B42D00397E}
+		{C88A987D-3E79-481C-9DD7-441371EAF9E6} = {9D8490A7-A075-4E53-A5F2-A960CF4DB3E7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7520405-4472-4800-B649-95134A0863F4}
 	EndGlobalSection
 EndGlobal
