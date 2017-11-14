@@ -12,13 +12,15 @@ namespace Serilog.Tests.Sinks.Observable
         {
             var eventSeen = false;
 
-            var log = new LoggerConfiguration()
+            using (var log = new LoggerConfiguration()
                 .WriteTo.Observers(events => events
                     .Do(evt => { eventSeen = true; })
                     .Subscribe())
-                .CreateLogger();
+                .CreateLogger())
+            {
+                log.Write(Some.InformationEvent());
+            }
 
-            log.Write(Some.InformationEvent());
             Assert.True(eventSeen);
         }
     }

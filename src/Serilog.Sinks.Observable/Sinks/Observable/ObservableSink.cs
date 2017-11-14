@@ -1,4 +1,4 @@
-﻿// Copyright 2013-2016 Serilog Contributors
+﻿// Copyright 2013-2017 Serilog Contributors
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -38,10 +38,8 @@ namespace Serilog.Sinks.Observable
 
             public Unsubscriber(ObservableSink sink, IObserver<LogEvent> observer)
             {
-                if (sink == null) throw new ArgumentNullException(nameof(sink));
-                if (observer == null) throw new ArgumentNullException(nameof(observer));
-                _sink = sink;
-                _observer = observer;
+                _sink = sink ?? throw new ArgumentNullException(nameof(sink));
+                _observer = observer ?? throw new ArgumentNullException(nameof(observer));
             }
 
             public void Dispose()
@@ -124,11 +122,12 @@ namespace Serilog.Sinks.Observable
             {
                 if (_disposed) return;
 
-                _disposed = true;
                 foreach (var observer in _observers)
                 {
                     observer.OnCompleted();
                 }
+
+                _disposed = true;
             }
         }
     }
