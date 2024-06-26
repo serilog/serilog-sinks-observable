@@ -38,7 +38,7 @@ namespace Serilog
             this LoggerSinkConfiguration sinkConfiguration,
             Action<IObservable<LogEvent>> configureObservers,
             LogEventLevel restrictedToMinimumLevel = LevelAlias.Minimum,
-            LoggingLevelSwitch levelSwitch = null)
+            LoggingLevelSwitch? levelSwitch = null)
         {
             if (configureObservers == null) throw new ArgumentNullException(nameof(configureObservers));
             var observable = new ObservableSink();
