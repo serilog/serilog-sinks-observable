@@ -21,6 +21,9 @@ using Serilog.Sinks.Observable;
 
 namespace Serilog
 {
+    /// <summary>
+    /// Adds the WriteTo.Observers() extension method to <see cref="LoggerConfiguration"/>.
+    /// </summary>
     public static class ObservableLoggerConfigurationExtensions
     {
         /// <summary>
