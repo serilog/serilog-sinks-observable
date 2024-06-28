@@ -94,7 +94,7 @@ namespace Serilog.Sinks.Observable
 
             Interlocked.MemoryBarrier();
 
-            IList<Exception> exceptions = null;
+            List<Exception>? exceptions = null;
 
             // Mutations are made by replacing _observers wholesale.
             // ReSharper disable once InconsistentlySynchronizedField
@@ -106,8 +106,7 @@ namespace Serilog.Sinks.Observable
                 }
                 catch (Exception ex)
                 {
-                    if (exceptions == null)
-                        exceptions = new List<Exception>();
+                    exceptions ??= new();
                     exceptions.Add(ex);
                 }
             }

@@ -21,6 +21,9 @@ using Serilog.Sinks.Observable;
 
 namespace Serilog
 {
+    /// <summary>
+    /// Adds the WriteTo.Observers() extension method to <see cref="LoggerConfiguration"/>.
+    /// </summary>
     public static class ObservableLoggerConfigurationExtensions
     {
         /// <summary>
@@ -38,7 +41,7 @@ namespace Serilog
             this LoggerSinkConfiguration sinkConfiguration,
             Action<IObservable<LogEvent>> configureObservers,
             LogEventLevel restrictedToMinimumLevel = LevelAlias.Minimum,
-            LoggingLevelSwitch levelSwitch = null)
+            LoggingLevelSwitch? levelSwitch = null)
         {
             if (configureObservers == null) throw new ArgumentNullException(nameof(configureObservers));
             var observable = new ObservableSink();
